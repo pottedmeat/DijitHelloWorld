@@ -2,9 +2,9 @@
   "name": "dijit-hello-world",
   "version": "0.0.1",
   "description": "A hello world example with Dijit",
-  "main": "src/index.html",
+  "main": "build/src/index.html",
   "scripts": {
-    "serve": "http-server src -c-1"
+    "serve": "http-server build/src -c-1"
   },
   "author": "Neil Roberts",
   "license": "ISC",

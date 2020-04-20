@@ -1,17 +1,10 @@
-define([
-    "dojo/_base/declare",
-    "dojo/dom-construct",
-    "dijit/_WidgetBase",
-    "dijit/form/Button",
-    "dijit/form/TextBox"
-], function(
-    declare,
-    domConstruct,
-    _WidgetBase,
-    Button,
-    TextBox
-) {
-    return declare([_WidgetBase], {
+
+import declare from "dojo/_base/declare";
+import domConstruct from "dojo/dom-construct";
+import _WidgetBase from "dijit/_WidgetBase";
+import Button from "dijit/form/Button";
+import TextBox from "dijit/form/TextBox";
+    export default declare([_WidgetBase], {
         onChange: function (e) {
             return true;
         },
@@ -52,4 +45,4 @@ define([
             }).placeAt(td));
         }
     });
-});
+
