@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://dojotoolkit.org/documentation/tutorials/1.10/_common/demo.css">
+    <link rel="stylesheet" type="text/css" href="https://dojotoolkit.org/documentation/tutorials/1.10/beyond_dojo/demo/style.css">
+    <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dijit/themes/claro/claro.css">
+    <title>Tutorial: Hello Dojo!</title>
+</head>
+<body class="claro">
+    <h1 id="mainHeading"></h1>
+    <!-- load Dojo -->
+    <script>
+        var dojoConfig = {
+            baseUrl: location.href,
+            isDebug: true,
+            async: true,
+            packages: [
+                {
+                    name: 'demo',
+                    location: './demo',
+                    main: 'index'
+                },
+                {
+                    name: 'dijit',
+                    location: '//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dijit'
+                }
+            ]
+        };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.14.1/dojo/dojo.js"></script>
+    <script>
+        require(['demo']);
+    </script>
+</body>
+</html>
