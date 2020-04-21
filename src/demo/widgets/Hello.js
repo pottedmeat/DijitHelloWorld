@@ -4,8 +4,8 @@ import _WidgetBase from "dijit/_WidgetBase";
 import Button from "dijit/form/Button";
 import TextBox from "dijit/form/TextBox";
 
-/** @typedef {{ nameInput: TextBox, onChange(name: string): boolean }} HelloThis */
-export default declare([_WidgetBase, /** @type dojo._base.DeclareConstructor<HelloThis> */ ({})], {
+export default declare([_WidgetBase], {
+    nameInput: /** @type TextBox */ (undefined),
     onChange: function (e) {
         return true;
     },
