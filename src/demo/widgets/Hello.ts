@@ -4,12 +4,8 @@ import _WidgetBase from "dijit/_WidgetBase";
 import Button from "dijit/form/Button";
 import TextBox from "dijit/form/TextBox";
 
-interface HelloThis {
-    nameInput: TextBox;
-    onChange(name: string): boolean;
-}
-
-export default declare([_WidgetBase, {} as dojo._base.DeclareConstructor<HelloThis>], {
+export default declare([_WidgetBase], {
+    nameInput: undefined as TextBox,
     onChange: function (name: string) {
         return true;
     },
