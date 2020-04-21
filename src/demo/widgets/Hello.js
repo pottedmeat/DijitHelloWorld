@@ -25,14 +25,13 @@ export default declare([_WidgetBase], {
         }, td);
         tr = domConstruct.create("tr", null, table);
         td = domConstruct.create("td", null, tr);
-        this.nameInput = new TextBox({
+        [this.nameInput] = this.own(new TextBox({
             id: this.id + "Name",
             type: "text",
             name: "name",
             trim: true,
             propercase: true
-        }).placeAt(td);
-        this.own(this.nameInput);
+        }).placeAt(td));
 
         tr = domConstruct.create("tr", null, table);
         domConstruct.create("td", null, tr);
