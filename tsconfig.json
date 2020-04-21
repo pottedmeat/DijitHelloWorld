@@ -3,6 +3,7 @@
     "allowJs": true,
     "checkJs": true,
     "esModuleInterop": true,
+    "noImplicitThis": true,
     "lib": [
       "dom",
       "es2015",
