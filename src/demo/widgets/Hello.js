@@ -1,4 +1,3 @@
-
 import declare from "dojo/_base/declare";
 import domConstruct from "dojo/dom-construct";
 import _WidgetBase from "dijit/_WidgetBase";
