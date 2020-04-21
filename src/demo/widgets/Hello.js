@@ -11,7 +11,6 @@ define([
     Button,
     TextBox
 ) {
-    // https://dojotoolkit.org/documentation/tutorials/1.10/beyond_dojo/demo/dijitForm.html
     return declare([_WidgetBase], {
         onChange: function (e) {
             return true;
