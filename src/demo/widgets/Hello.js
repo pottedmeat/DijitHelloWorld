@@ -4,8 +4,8 @@ import _WidgetBase from "dijit/_WidgetBase";
 import Button from "dijit/form/Button";
 import TextBox from "dijit/form/TextBox";
 
-/** @typedef {Partial<dijit._WidgetBase & { nameInput: dijit.form.TextBox }>} HelloState */
-export default declare([_WidgetBase], /** @type HelloState */ ({
+/** @typedef {{ nameInput: TextBox, onChange(name: string): boolean }} HelloThis */
+export default declare([_WidgetBase, /** @type dojo._base.DeclareConstructor<HelloThis> */ ({})], {
     onChange: function (e) {
         return true;
     },
@@ -25,26 +25,24 @@ export default declare([_WidgetBase], /** @type HelloState */ ({
         }, td);
         tr = domConstruct.create("tr", null, table);
         td = domConstruct.create("td", null, tr);
-        /** @type Partial<dijit.form.TextBox> */
-        var options = {
+        this.nameInput = new TextBox({
             id: this.id + "Name",
             type: "text",
             name: "name",
             trim: true,
             propercase: true
-        };
-        this.nameInput = new TextBox(options).placeAt(td);
+        }).placeAt(td);
         this.own(this.nameInput);
 
         tr = domConstruct.create("tr", null, table);
         domConstruct.create("td", null, tr);
         tr = domConstruct.create("tr", null, table);
         td = domConstruct.create("td", null, tr);
-        this.own(new Button(/** @type Partial<dijit.form.Button> */ ({
+        this.own(new Button({
             label: "Greet",
             onClick: function (e) {
                 this.onChange(this.nameInput.get("value"));
             }.bind(this)
-        })).placeAt(td));
+        }).placeAt(td));
     }
-}));
+});
