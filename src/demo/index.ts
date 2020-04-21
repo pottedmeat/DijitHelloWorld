@@ -3,13 +3,13 @@ import dom from "dojo/dom";
 import Hello from "demo/widgets/Hello";
 import "dojo/domReady!";
 
-function greet(name) {
-    (/** @type HTMLElement */ (dom.byId("mainHeading"))).innerText = "Hello " + (name || "World") + "!";
+function greet(name = 'World') {
+    dom.byId<HTMLElement>("mainHeading").innerText = `Hello ${name}!`;
 }
 greet();
 
 (new Hello({
-    onChange: function (name) {
+    onChange: function (name: string) {
         greet(name);
     }
 })).placeAt(win.body());
