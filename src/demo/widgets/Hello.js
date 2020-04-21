@@ -25,13 +25,15 @@ export default declare([_WidgetBase], /** @type HelloState */ ({
         }, td);
         tr = domConstruct.create("tr", null, table);
         td = domConstruct.create("td", null, tr);
-        this.nameInput = new TextBox(/** @type Partial<dijit.form.TextBox> */ ({
+        /** @type Partial<dijit.form.TextBox> */
+        var options = {
             id: this.id + "Name",
             type: "text",
             name: "name",
-            trim: "true",
-            properCase: true
-        })).placeAt(td);
+            trim: true,
+            propercase: true
+        };
+        this.nameInput = new TextBox(options).placeAt(td);
         this.own(this.nameInput);
 
         tr = domConstruct.create("tr", null, table);

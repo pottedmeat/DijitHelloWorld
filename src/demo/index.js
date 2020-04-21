@@ -4,7 +4,7 @@ import Hello from "demo/widgets/Hello";
 import "dojo/domReady!";
 
 function greet(name) {
-    dom.byId("mainHeading").innerText = "Hello " + (name || "World") + "!";
+    (/** @type HTMLElement */ (dom.byId("mainHeading"))).innerText = "Hello " + (name || "World") + "!";
 }
 greet();
 
